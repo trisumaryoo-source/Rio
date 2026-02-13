@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/boostrapslide.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="/bootstrap.js"></script>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LOGIN</title>
+	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/full.css" rel="stylesheet">
+	
+
+	
+</head>
+
+<body>
+
+<!--
+			$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		<script type="text/javascript" src="js/md5.js"></script>
+		<script type="text/javascript">
+		function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		}
+		</script>
+		$(endif)
+<!-- Menu Navigasi -->
+	
+	  <nav class="navbar navbar-default example6 navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar6">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand text-hide" href="login.html">Brand Text
+        </a>
+      </div>
+      <div id="navbar6" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left tulisannav">
+		
+          <li><a href="login.html">LOGIN</a></li>
+
+		   <li><a href="faq.html">FAQ</a></li>
+         
+        </ul>
+		
+      </div>
+   
+    </div>
+
+  </nav> 
+
+		
+	
+		<!-- Menu Navigasi TUTUP -->
+<!--isi konten all buka-->
+<div class="col-md-10 col-md-offset-1 well" style="padding:0px;">
+
+<div class="col-md-4 col-md-push-8 ">
+<br>
+<center>
+<img src="img/iki.png" class="img-responsive">
+
+<small>
+
+<marquee scrollamount="7">
+<font color="#0000">
+<h5>Layanan internet unlimited tanpa batas kuota <span class="glyphicon glyphicon-star"></span> streaming dan browsing nyaman tanpa takut kehabisan kuota <span class="glyphicon glyphicon-star"></span> tersedia paket VOUCHER dan INTERNET RUMAHAN<h5>
+</font>
+</marquee></small>
+<span class="">
+<b><p align=""><font face="Arial" color="" size="3"><a>MASUKAN KODE VOUCHER ANDA</font></p></a>
+</span>				
+<small>
+
+</small>
+
+<button class="btn btn-success" onclick="openLogin(event, 'KV')" id="kodevoucher" style="width:49%"><span class="glyphicon glyphicon-qrcode"></span> <b>VOUCHER</b></button>
+<button class="btn btn-success" onclick="openLogin(event, 'UP')" id="userpass" style="width:49%"><span class="glyphicon glyphicon-user"></span> <b>MEMBER</b></button>
+
+<!-- Login 1 kolom-->
+      <div id="KV" class="tabcontent">
+$(if chap-id)
+        <form name="sendinkv" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginkv() {
+            document.sendinkv.username.value = document.loginkv.usernamekv.value;
+            document.sendinkv.password.value = hexMD5('$(chap-id)' + document.loginkv.passwordkv.value + '$(chap-challenge)');
+            document.sendinkv.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+
+
+
+		
+<form name="loginkv" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLoginkv()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+
+<!--KODE VOUCHER-->
+ <!--keterangan error-->
+<center><b>
+<div id="error" class='error' style="img-responsive">
+                    <script type="text/javascript">
+                    var error="$(error)";
+                    if(error=="user $(username) has reached uptime limit"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Masa Aktif Kode anda sudah habis</div>');
+                        }
+                    else if(error=="no more sessions are allowed for user $(username)") {
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Kode Akses sedang digunakan user lain</div>');
+                        }
+                    else if(error=="invalid username or password"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Kode Akses salah atau tidak terdaftar di server kami</div>');
+                        }  
+                    else if(error=="user $(username) has reached traffic limit"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Kuota Kode anda sudah habis</div>');
+                        }
+                    else if(error=="user $(username) is not allowed to log in from this MAC address"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i><small>Kode Akses ini sudah pernah login di perangkat lain<br>"satu kode voucher hanya bisa login di satu perangkat"</b></small></div>');
+                        }
+                    else if(error=="web browser did not send challenge response (try again, enable JavaScript)"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Browser anda error, gunakan browser lain atau tutup aplikasi ini lalu ulangi lagi</div>');
+                        }                      
+                    </script>
+                </div>  </b></center>
+<!--keterangan error tutup-->
+ 
+<!--KODE VOUCHER-->
+
+ <div class="form-group">
+  <input type="text" class="form-control input" id="user" name="usernamekv"  onchange="updateInput(this.value)" placeholder="MASUKAN KODE AKSES" value="$(username)" required="required" autocomplete="off">
+  <input type="hidden" class="form-control input" id="pass" name="passwordkv"  placeholder="password" required="required" autocomplete="off">
+</div>
+<script type="text/javascript">
+              function updateInput(passwd){
+              document.getElementById("pass").value = passwd;
+              }
+            </script>
+<div class="form-group text-center">
+$(if logged-in == 'yes')
+
+$(endif)
+
+<button type="submit" class="btn btn-merah"><span class="glyphicon glyphicon-log-in"></span> <b><font color="#fff">LOGIN</font></b></button>
+</form>
+
+</div>
+</div>
+
+<!--kolom 1 tutup-->
+
+<!-- Login 2 kolom -->
+
+
+
+
+
+      <div id="UP" class="tabcontent">
+        $(if chap-id)
+        <form name="sendinup" action="$(link-login-only)" method="post">
+          <input type="hidden" name="username" />
+          <input type="hidden" name="password" />
+          <input type="hidden" name="dst" value="$(link-orig)" />
+          <input type="hidden" name="popup" value="true" />
+        </form>
+	
+		
+		
+        <script type="text/javascript" src="/md5.js"></script>
+        <script type="text/javascript">
+          function doLoginup() {
+            document.sendinup.username.value = document.loginup.usernameup.value;
+            document.sendinup.password.value = hexMD5('$(chap-id)' + document.loginup.passwordup.value + '$(chap-challenge)');
+            document.sendinup.submit();
+            return false;
+          }
+        </script>
+        $(endif)
+
+		
+	
+		
+		
+<form name="loginup" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLoginup()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+
+<!--keterangan error-->
+<center><b>
+<div id="error" class='error' style="img-responsive">
+                    <script type="text/javascript">
+                    var error="$(error)";
+                    if(error=="user $(username) has reached uptime limit"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Masa Aktif User ID "$(username) Sudah Habis</div>');
+                        }
+                    else if(error=="no more sessions are allowed for user $(username)") {
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>User ID Sudah Di Pakai Pelanggan Lain</div>');
+                        }
+                    else if(error=="invalid username or password"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>User ID / Password Yang Anda Masukan Salah</div>');
+                        } 
+					else if(error=="user $(username) is not allowed to log in from this MAC address"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i><small>User ID ini di lock MAC ADDRESS, 1 USER ID hanya bisa untuk 1 perangkat</b></small></div>');
+                        }
+                    else if(error=="user $(username) has reached traffic limit"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Kuota Anda Sudah Habis</div>');
+                        }    
+					else if(error=="web browser did not send challenge response (try again, enable JavaScript)"){
+                        document.write('<div class="alert alert-danger"><i class="icon-attention-circled"></i>Browser anda error, gunakan browser lain atau tutup aplikasi ini lalu ulangi lagi</div>');
+                        }  
+                    </script>
+                </div>  </b></center>
+<!--keterangan error tutup-->	
+
+     <div class="form-group">
+  <input type="text" class="form-control input" name="usernameup"  placeholder="USERNAME" value="$(username)" required="required" autocomplete="off">
+
+  <input type="password" class="form-control input" name="passwordup"  placeholder="PASSWORD" required="required" autocomplete="off">
+</div>
+
+<div class="form-group text-center">
+$(if logged-in == 'yes')
+$(endif)
+
+<button type="submit" class="btn btn-merah"><span class="glyphicon glyphicon-log-in"></span><b><font color="#fff"> LOGIN</font></b></button>
+
+</form>
+</div>
+</div>	
+$(if error)
+				<div class="alert alert-danger alert-dismissible" role="alert" style="font-size:12px;">
+					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<strong>Error!</strong> $(error).
+				</div>
+				$(endif)
+<script>
+function openLogin(evt, loginName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(loginName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("kodevoucher").click();
+</script>
+<!--login kolom 2 tutup-->
+<p align=""><font face="Arial" color="" size="2">Perhatikan penulisan huruf besar dan kecil</font></p>
+<hr style="margin-bottom:5px; margin-top:-5px;">		
+<span class="blink">
+<h5><b><font color="green">GUNAKAN INTERNET DENGAN BIJAK</font></b></h5>
+</span>
+<hr style="margin-top:5px;">
+</center>
+</div>
+	
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="/jquery.js"></script>
+	<script src="js/bootstrapmincss.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+<style>
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+</style>	
+
+
+	
+
+
+</body>
+
+</html>
